@@ -5,6 +5,7 @@ using namespace std;
 const string CCCD = "094208004009";
 const string PASSWORD = "123aloalo";
 bool login = false;
+long sodu = 5000000000;
 
 int main() {
 	while(true) {
@@ -41,14 +42,53 @@ int main() {
 				cout << "Ban da dang nhap roi!" << endl;
 				break;
 			}
-			case 2:
+			case 2: {
 				if (login==false) {
 					cout << "Vui long dang nhap truoc!" << endl;
 					break;
 				}
-			case 3:
+				cout << "So du hien tai: " << sodu << " dong." << endl;
+				break;
+			}
+			case 3: {
+				if (login==false) {
+					cout << "Vui long dang nhap truoc!" << endl;
+					break;
+				}
+				cout << "===== BANK SYSTEM =====" << endl;
+				cout << "Nhap so tien nap: ";
+				long sotiennap;
+				cin >> sotiennap;
+				cout << "Ban co chac chan nap so tien " << sotiennap << " vao tai khoan khong?" << endl;
+				cout << "Y/N: ";
+				char recheck;
+				cin >> recheck;
+				switch(recheck) {
+					case 'Y':
+					case 'y':
+						sodu += sotiennap;
+						sotiennap = 0;
+						cout << "So du hien tai la: " << sodu << " dong" << endl;
+						break;
+					case 'N':
+					case 'n':
+					default:
+						sotiennap = 0;
+				}
+				break;
+			}
 			case 4:
+				if (login==false) {
+					cout << "Vui long dang nhap truoc!" << endl;
+					break;
+				}
+
 			case 5:
+				if (login==false) {
+					cout << "Vui long dang nhap truoc!" << endl;
+					break;
+				}
+
 			default:
 				cout << "Lua chon khong hop le!" << endl;
 				break;
